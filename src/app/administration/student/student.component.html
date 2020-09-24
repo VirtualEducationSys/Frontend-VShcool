@@ -1,0 +1,117 @@
+
+<div fxLayout="column wrap" fxLauoutAlign='space-between center' fxLayoutGap='15px'>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="form">
+<mat-card class="input-form">
+    <mat-card-header class="input-form-header">
+        <div mat-card-avatar class="header-image"></div>
+        <mat-card-title>{{_studentName}}</mat-card-title>
+        <mat-card-subtitle>{{_level}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="input-form-content">
+        <div fxLayout="row wrap" style="margin-top:20px;" fxLauoutAlign='space-between center' fxLayoutGap='15px'>
+            <div fxLayout="row wrap" class="input-column" fxLauoutAlign='space-between center' fxLayoutGap='20px' fxLayoutAlign="flex-start">
+                <mat-form-field appearance="fill">
+                    <mat-label>CNE</mat-label>
+                    <input matInput placeholder="" formControlName="lastName" required>
+                    <!-- <mat-icon matPrefix>person</mat-icon> -->
+                    <mat-error *ngIf="!formGroup.controls['lastName'].valid">{{getErrorlastName()}}</mat-error>
+                  </mat-form-field>
+            
+                <mat-form-field appearance="fill">
+            <mat-label>Nom</mat-label>
+            <input matInput placeholder="" formControlName="lastName" required>
+            <mat-icon matPrefix>person</mat-icon>
+            <mat-error *ngIf="!formGroup.controls['lastName'].valid">{{getErrorlastName()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Prénom</mat-label>
+            <input matInput placeholder="" formControlName="firstName" required>
+            <!-- <mat-icon matPrefix>person</mat-icon> -->
+            <mat-error *ngIf="!formGroup.controls['firstName'].valid">{{getErrorfirstName()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Date de naissance</mat-label>
+            <input matInput [matDatepicker]="dp" formControlName="date">
+            <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+            <mat-datepicker #dp></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Télephone</mat-label>
+            <input matInput placeholder="" formControlName="lastName">
+            <mat-icon matPrefix>phone</mat-icon>
+            <mat-error *ngIf="!formGroup.controls['lastName'].valid">{{getErrorlastName()}}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Niveau</mat-label>
+            <mat-select formControlName="firstName">
+              <mat-option>Clear</mat-option>
+              <mat-option value="valid">Valid option</mat-option>
+              <mat-option value="invalid">Invalid option</mat-option>
+            </mat-select>
+            <mat-error *ngIf="!formGroup.controls['firstName'].valid">{{getErrorfirstName()}}</mat-error>
+          </mat-form-field>
+
+          
+          <mat-form-field appearance="fill">
+            <mat-label>Classe</mat-label>
+            <mat-select formControlName="firstName">
+              <mat-option>Clear</mat-option>
+              <mat-option value="valid">Valid option</mat-option>
+              <mat-option value="invalid">Invalid option</mat-option>
+            </mat-select>
+            <mat-error *ngIf="!formGroup.controls['firstName'].valid">{{getErrorfirstName()}}</mat-error>
+          </mat-form-field>
+
+          <!-- <mat-form-field appearance="fill">
+            <mat-label>Classe</mat-label>
+            <input matInput placeholder="pat@example.com" formControlName="email" required>
+             <mat-icon matPrefix>email</mat-icon> 
+            <mat-error *ngIf="!formGroup.controls['email'].valid">{{getErrorEmail()}}</mat-error>
+          </mat-form-field> -->
+
+          <mat-form-field appearance="fill">
+            <mat-label>Tuteur</mat-label>
+            <input matInput placeholder="" formControlName="lastName" required>
+            <mat-icon matPrefix>person</mat-icon>
+            <mat-error *ngIf="!formGroup.controls['lastName'].valid">{{getErrorlastName()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Télephone tuteur</mat-label>
+            <input matInput placeholder="" formControlName="firstName" required>
+            <mat-icon matPrefix>phone</mat-icon>
+            <mat-error *ngIf="!formGroup.controls['firstName'].valid">{{getErrorfirstName()}}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="" formControlName="firstName" required>
+            <mat-icon matPrefix>alternate_email</mat-icon>
+            <mat-error *ngIf="!formGroup.controls['firstName'].valid">{{getErrorfirstName()}}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Email tuteur</mat-label>
+            <input matInput placeholder="" formControlName="firstName" required>
+            <mat-icon matPrefix>alternate_email</mat-icon>
+            <mat-error *ngIf="!formGroup.controls['firstName'].valid">{{getErrorfirstName()}}</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="column">
+            <mat-tab-group  [color]="'primary'" [backgroundColor]="'primary'">
+                <mat-tab label="Notes"> Content 1 </mat-tab>
+                <mat-tab label="Absences"> Content 2 </mat-tab>
+                <mat-tab label="Remarques"> Content 3 </mat-tab>
+              </mat-tab-group>
+        </div>
+        </div>        
+
+    </mat-card-content>
+    <mat-card-actions align="end" class="input-form-footer">
+            <button mat-stroked-button type="submit" [disabled]="formGroup.invalid">Enregistrer</button>
+            <!-- <button mat-stroked-button>SHARE</button> -->
+      </mat-card-actions>
+</mat-card>
+</form>
+</div>

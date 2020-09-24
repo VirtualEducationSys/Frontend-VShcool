@@ -1,0 +1,23 @@
+<div fxLayout="row wrap" fxLauoutAlign='space-between center' fxLayoutGap='20px'>
+<mat-card *ngFor="let feature of Features" >
+    <mat-card-content class="exemple-card-content">
+        <div fxLayout="row wrap" fxLauoutAlign='space-between center' fxLayoutGap='20px'>
+        <button mat-button mat-stroked-button [routerLink]="[feature.Route]"
+        class="catalog-button" [style.background-color]="feature.Color">
+            <mat-icon>{{feature.Icon}}</mat-icon>
+            <!-- <div>{{feature.Title}}</div> -->
+        </button>
+        <div class="feature-title"><label class="label">{{feature.Title}}</label></div>
+    </div>
+    </mat-card-content>
+</mat-card>
+</div>
+
+<!-- <mat-grid-list [cols]="Features.length" rowHeight="100%" >
+    <mat-grid-tile *ngFor="let feature of Features" colspan="1" rowspan="1" class="my-grid-tile" [style.background]="'black'">
+        {{feature.Title}}
+    </mat-grid-tile>
+</mat-grid-list>  -->
+
+​
+

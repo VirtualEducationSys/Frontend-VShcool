@@ -1,0 +1,57 @@
+<mat-card fxFlex="100" style="margin:2em;">
+    <mat-card-header>
+        <mat-card-title></mat-card-title>
+        <mat-card-subtitle>Set minimum threshold by categories
+            <!-- <span class="example-spacer"></span>
+            <button type="button" mat-icon-button title='Ajouter'>
+              <mat-icon class="example-icon"  aria-hidden="false" aria-label="Example add icon">add</mat-icon>
+            </button> -->
+        </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-grid-list cols="7" rowHeight="100px">
+                <mat-grid-tile colspan="3" rowspan="1">
+                    <mat-form-field appearance="standard">
+                        <input type="text"
+                               placeholder="Pick one"
+                               aria-label="Number"
+                               matInput
+                               [formControl]="myControl"
+                               [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete">
+                          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                            {{option}}
+                          </mat-option>
+                        </mat-autocomplete>
+                      </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="3" rowspan="1">
+                    <mat-form-field appearance="standard">
+                        <mat-label>Threshold</mat-label>
+                        <input type="number" matInput>
+                      </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="1" rowspan="1">
+                    <button type="button" mat-icon-button title='Ajouter'>
+                        <mat-icon class="example-icon"  aria-hidden="false" aria-label="Example add icon">delete</mat-icon>
+                      </button>
+                </mat-grid-tile>
+                </mat-grid-list>
+        </mat-card-content>
+    </mat-card>
+
+
+<!-- <div fxLayout='row' fxLauoutAlign='space-between center' fxLayoutGap='20px' class=stats-cards>
+
+    <mat-card fxFlex="100" style="text-align: center;">
+    <mat-tab-group>
+        <mat-tab label="Stock">
+    </mat-tab>
+    <mat-tab label="Product referential">
+    </mat-tab>
+    <mat-tab label="Preferences">
+
+    </mat-tab>
+</mat-tab-group>
+</mat-card>
+</div> -->

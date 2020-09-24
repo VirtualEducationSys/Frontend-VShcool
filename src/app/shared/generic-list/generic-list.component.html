@@ -1,0 +1,33 @@
+<div class="mat-elevation-z8">
+  <!-- <mat-toolbar>  
+    <mat-toolbar-row>
+    <span>{{feature}}</span>
+    <span class="example-spacer"></span>
+    <button type="button" mat-icon-button title='Ajouter'>
+      <mat-icon class="example-icon"  aria-hidden="false" aria-label="Example add icon">add</mat-icon>
+    </button>
+     <mat-divider vertical style="height:20px"></mat-divider>
+    <button type="button" mat-icon-button title='Supprimer'>
+      <mat-icon class="example-icon"  aria-hidden="false" aria-label="Example delete icon">delete</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar> -->
+<div class="example-container" [style.maxHeight]='maxheight'>
+  <table mat-table matSort aria-label="Elements">
+    <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns" matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{column}}</th>
+      <td mat-cell *matCellDef="let element">{{element[column]}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+  </div>
+<mat-paginator #paginator
+[length]="dataSource?.data.length"
+[pageIndex]="0"
+[pageSize]="25"
+[pageSizeOptions]="[25, 50, 100, 250]">
+</mat-paginator>
+</div>

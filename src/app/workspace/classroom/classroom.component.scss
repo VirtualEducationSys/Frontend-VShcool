@@ -1,0 +1,38 @@
+.main-content {
+    flex:1 1 auto;
+    display: flex;
+    min-height: 100vh;
+    overflow-y:auto;
+}
+
+.course-content {
+    width:250px;
+    min-height: 100vh;
+    overflow: hidden;
+    top: 0; /* Stay at the top */
+    left: 0;
+}
+
+.course-section{
+    flex:1;
+    margin: 30px;
+    padding:0 !important;
+}
+
+.course-section>.mat-card-header{
+    margin:0 !important;
+    padding:0 !important;
+}
+
+
+.mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: rgb(34, 116, 165) !important;
+    height:30px !important;
+  }
+
+  .mat-icon {
+      cursor:pointer;
+  }

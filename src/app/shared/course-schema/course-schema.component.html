@@ -1,0 +1,26 @@
+<!--  -->
+<div fxLayout="column" class="main-container" fxLauoutAlign='space-between center' fxLayoutGap='15px'>
+    <div class="path-header">
+        <a mat-mini-fab disabled aria-label="" color="warn">
+            <mat-icon>home</mat-icon>
+        </a>  
+          <strong class="path-header-title">بداية الدرس</strong>
+    </div>
+    <div class="path-section" style="z-index: 1;" *ngFor="let section of datasource; let i = index">
+        <button mat-mini-fab aria-label="" (click)="toggle(i);">
+            <mat-icon>{{section.toggleIcon}}</mat-icon>
+          </button>  
+          <a class="path-section-title" (click)="toggle(i);">{{section.name}}</a>
+          <div *ngIf="section.expand">
+          <div class="path-subsection" style="z-index: 1;" *ngFor="let subSection of section.children">
+              <a class="path-subsection-title">{{subSection.name}}</a>
+        </div> 
+    </div>
+    </div>
+    <div class="path-footer">
+        <button mat-mini-fab disabled aria-label="">
+            <mat-icon>place</mat-icon>
+          </button>  
+          <strong class="path-header-title">نهاية الدرس</strong>
+    </div>
+</div>

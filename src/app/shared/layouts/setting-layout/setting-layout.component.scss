@@ -1,0 +1,63 @@
+.sidenav-container {
+    height: 100%;
+  }
+  
+  .sidenav {
+    width: 200px;
+    margin:5em;
+    margin-top:0;
+    margin-bottom:0;
+    margin-left:0;
+  }
+  
+  .sidenav .mat-toolbar {
+    background: inherit;
+  }
+  
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background:#673ab7 !important;
+  }
+  
+  .mat-toolbar.ng-tns-c36-0.mat-toolbar-single-row {
+    background:#673ab7 !important;
+    color:#ffffff;
+  }
+  
+  mat-sidenav-container {
+    &.mat-sidenav-container {
+      width: 100vw;
+      height: 100vh;
+      background: transparent;
+      position: fixed;
+    }
+    &>mat-sidenav {
+      width: 15vw;
+      min-width: 200px !important;
+    }
+    .content {
+      padding: 10px;
+    }
+  }
+  
+  
+  .mat-nav-list.mat-list-base.ng-tns-c215-0{
+    flex-grow: 1;
+  }
+  
+  .example-spacer {
+    flex-grow: 1;
+    margin-bottom: auto;
+  }
+  
+  
+  .footer {
+    position: fixed;
+    bottom: 0;
+    background-color: lightslategray;
+    color: white;
+    text-align: center;
+    margin: 0px;
+  }
